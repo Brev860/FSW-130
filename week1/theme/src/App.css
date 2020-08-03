@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  margin: auto;
+  position: relative;
+  left: 45%;
+  width: 90px;
+  height: 40px;
+}
+
+.dark-theme {
+  background-color: #333333;
+  color: whitesmoke;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.light-theme {
+  background-color: whitesmoke;
+  color: #333333;
+}
+.nav {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding: 15px;
+}
+.main{
+  position: relative;
+  margin: auto;
+  width: 60%;
+  height: 200px;
+  padding: 10px;
+  text-align: center;
+
+}
