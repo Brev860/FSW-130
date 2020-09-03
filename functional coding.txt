@@ -1,0 +1,165 @@
+Functions can be assigned, passed as arg, or return from other functions.
+
+High Order Functions takes a funct as arg or returns or both.
+ex. setTimeOut, .map, setInterval
+__________________________________________________________________________
+non funct code ex.
+
+let input = '  javascript  ' (string has spaces in the start and end of string)
+let output = '<div>' + input.trim()+ '</div>' (.trim() removes spaces in input string)
+_____________________________________________________________________________
+functional code ex.
+
+const trim = str => str.trim()
+const wrapInDiv = str => `<div>${str}</div>`
+const result = wrapInDiv(trim(input)) ---(code read right to left)
+_____________________________________________________________________________
+
+LoDash: utility library for JS.
+
+Pure functions if given same varibales always returns the same results. can't accept random values, currnet date or time, change global elements DOM, files, db, etc..
+
+can't mutate parameters
+
+self documentting(what you need is in the parameter list())
+easly tested, can run concerrent
+cachable(resutls stored in cache to be used in future)
+
+Immutablility:
+
+can not be changed must make a copy and mutate that property.
+
+objects are not immutable in Pure JS,
+
+Updaing Objects:
+
+1st way:
+reassign using Object.assign
+
+const person = {name: 'John'}
+const updatebject = Object.assign({}, person, {name: Bob', age: 30})**the first param is where to assign it and the second is the object being reassign to a new one, optional is a 3 param to update or add properties**
+
+2nd way:
+reassign using spread operator
+
+const person = {name: 'John'}
+const updated = {...person, name: 'Bob'}
+
+to not change the original object perform a deep copy to change object within object. 
+
+const person = {name: 'John', address: {city: new york. country: USA}
+const updated = {...person, 
+                    address:{
+                        ...person.address,
+                           city: Hartford},
+                                 name: 'Bob'}
+
+Updating Array:
+
+1 way spread operator
+
+const numbers = [1,2,3]
+
+const added = [4, ...numbers]**add number to beginging
+const added = [...numbers, 4]**add number to end
+
+const index = numbers.indexOf(2) **find data at index of 2**
+const added = [...numbers.slice(0,index), 4, ...numbers.slice(index)]**
+
+const remove = number.filter(n => n !==2)** remove number 2 from array**
+
+**review .slice function**
+
+***Immer***
+Redux Arch:
+ steps:
+1)Design the store(what to keep in store) 
+2) define actions
+3) create reducer
+4)setup store based on reducer
+
+____________________________________________________________________________________________
+import {Map} from 'immutable'
+import {produce} from 'immer'
+
+// let book = Map({title:'Harry Potter'}) **immutable**
+let book = {title:'Harry Potter'}
+
+function publish(book){
+       return produce(book,draftBook =>{
+           draftBook.isPublished = true
+       } )
+    }
+
+let updated = publish(book)
+console.log(book)
+console.log(updated)
+
+
+// **immutable** function publish(book){
+//     book.set('issPublished', true) //using immutable using .set()
+// }
+
+// publish(book)
+
+console.log(book.get("title")) //using map .get() returns the obj variable passed in arg
+console.log(book.toJS())  // using Map .toJS will return plan JS object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import {compose, pipe} from 'lodash'
+
+// const trim = str => str.trim()
+// const wrapInDiv = str => `<div>${str}</div>`
+// const wrapInSpan = str => `<span>${str}</span>`
+// const toLowerCase = str => str.toLowerCase()
+
+// //currying a function:
+//   //below wrap is taking two parameters type and string separated by arrow
+// //
+// const wrap = type => str => `<${type}>${str}</${type}>`
+// //const result = wrapInDiv(trim(input)) //(code read right to left)
+
+// //const transform = compose(wrapInDiv, toLowerCase, trim) //compose reads right to left. first will trim then wrap in div
+// const input = '  Hi There  '
+
+// const transformPipe = pipe(trim, toLowerCase, wrap) // pipe will read left to right
+// //transform(input)
+// const results = transformPipe(input)
+
+// console.log(results);
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
