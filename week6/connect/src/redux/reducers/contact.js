@@ -1,16 +1,15 @@
 
-let id = 0
+// let id = 0
 
 export const userReducer = (state = [], action) =>{
   switch(action.type){
       case 'ADD_USER':
           return[
-              ...state,
-              {
-               id: ++id,
-               name: action.payload.name,
-               phone: action.payload.phone,
-               city: action.payload.city}
-          ]
+              ...state,{...action.payload}]
+      case 'REMOVE_USER':
+      return[
+      state.filter(contact => contact !== contact.name )]
+          default:
+            return state
   }
 }

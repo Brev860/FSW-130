@@ -23,8 +23,12 @@ submitEvent = e =>{
     e.preventDefault()
     const userData = {name:this.state.name, phone:this.state.phone, city:this.state.city}
     this.props.dispatch(actions.addUser(userData))
-   
+   console.log(userData)
     
+}
+delete = e =>{
+    e.preventDefault()
+    this.props.dispatch(actions.removeUser())
 }
 
 
@@ -62,11 +66,14 @@ render(){
             </form>
         <div>
           {this.props.user.map(contact =>(
-              <div>
-                  <p>{contact.name}, {contact.phone}, {contact.city}</p>
+              <div className='contact'>
+                  <p className='info'><strong>Contact</strong>:<br/>name: <u>{contact.name}</u>,<br/>phone: <u>{contact.phone}</u> , <br/>city: <u>{contact.city}</u></p>
+                 
+                  <button onClick={this.delete}>Delete</button> 
               </div>
+              
           ))}
-          <button>Delete</button> 
+          
        </div>
            
         </div>
@@ -77,7 +84,7 @@ render(){
 const mapStateToProps = (state)=>{
     console.log(state)
     return{
-        user: state
+        user: state.user
 
     }
     
