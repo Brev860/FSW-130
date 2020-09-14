@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+
+    background-image: url('./video/rickmorty.jpg');
+    background-color: #cccccc; 
+    background-position: center; 
+    background-repeat: repeat; 
+    background-size: cover;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+

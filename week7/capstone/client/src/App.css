@@ -1,0 +1,86 @@
+
+
+
+.App {
+  text-align: center;
+}
+
+
+
+.App-header {
+  width: 50%;
+  background-color: #282c34;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.charList{
+  border: 1px white solid;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(110, 105, 105);
+}
+.charimage{
+  float: left;
+  border: 5px white solid;
+}
+.list{
+  border: 1px white solid;
+  padding:10px;
+}
+.header{
+    margin: 80px;
+    padding: 20px;
+    text-align: center;
+    background: lightblue;
+    color: white;
+    font-size: 30px;
+    
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #282c34 ;
+}
+
+ul {
+  position: fixed;
+  list-style-type: none;
+  margin: auto;
+  top:0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+.link {
+  float: right;
+  border-left: 1px white solid;
+}
+
+.link .navitem {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h1{
+  text-decoration: underline;
+}
+.weblink{
+  padding:10px;
+}
+
